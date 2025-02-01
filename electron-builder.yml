@@ -1,6 +1,6 @@
 appId: 'cookielauncher'
 productName: 'Cookie Launcher'
-artifactName: '${productName}-setup-${version}.${ext}'
+artifactName: 'Cookie-Launcher-setup-${version}.${ext}'
 
 copyright: 'Copyright © 2018-2025 Daniel Scalzi, Mxxndawn'
 
@@ -33,7 +33,7 @@ mac:
       arch:
         - 'x64'
         - 'arm64'
-  artifactName: '${productName}-setup-${version}-${arch}.${ext}'
+  artifactName: 'Cookie-Launcher-setup-${version}-${arch}.${ext}'
   category: 'public.app-category.games'
 
 # Linux Configuration
