@@ -1,11 +1,12 @@
 # Custom Language File for Launcher Customizer
 
 [ejs.app]
-title = "Helios Launcher"
+title = "Cookie Launcher"
 
 [ejs.landing]
 mediaLinkURL = "https://cosmicstudio.space"
 mediaGitHubURL = "https://github.com/mxxndawn/CookieLauncher"
+mediaMapURL = "https://map.cosmicstudio.space"
 mediaTwitterURL = "#"
 mediaInstagramURL = "#"
 mediaYouTubeURL = "#"
