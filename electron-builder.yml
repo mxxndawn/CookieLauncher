@@ -1,6 +1,6 @@
 appId: 'cookielauncher'
 productName: 'Cookie Launcher'
-artifactName: '${productName}-setup-${version}.${ext}'
+artifactName: 'Cookie-Launcher-setup-${version}.${ext}'
 
 copyright: 'Copyright © 2018-2025 Daniel Scalzi, Mxxndawn'
 
