@@ -1151,8 +1151,9 @@ body, button {
     width: 75%;
     height: 1px;
     background: rgba(126, 126, 126, 0.57);
-    margin-left: auto;
-    margin-bottom: 25px;
+    /*margin-left: auto;
+    margin-bottom: 25px;*/
+    margin: 12px 20px;
 }
 
 /* Settings done button styles. */
@@ -1473,6 +1474,27 @@ input:checked + .toggleSwitchSlider:before {
     text-shadow: 0px 0px 20px white;
 }
 .settingsFileSelButton:active {
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* File selection button. */
+.settingsDeleteButton {
+    border: 0px;
+    border-radius: 0px 3px 3px 0px;
+    font-size: 12px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: #c32625;
+    transition: 0.25s ease;
+    white-space: nowrap;
+    outline: none;
+}
+.settingsDeleteButton:hover,
+.settingsDeleteButton:focus {
+    text-shadow: 0px 0px 20px white;
+}
+.settingsDeleteButton:active {
     text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.75);
     color: rgba(255, 255, 255, 0.75);
 }

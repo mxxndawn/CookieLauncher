@@ -12,12 +12,19 @@
                     <button class="settingsNavItem" rSc="settingsTabJava"><%- lang('settings.navJava') %></button>
                     <button class="settingsNavItem" rSc="settingsTabLauncher"><%- lang('settings.navLauncher') %></button>
                     <div class="settingsNavSpacer"></div>
+                    <button class="settingsNavItem" rSc="settingsTabDelete" id="settingsNavDelete"><%- lang('settings.navDelete') %></button>
+                    <div class="settingsNavSpacer"></div>
                     <button class="settingsNavItem" rSc="settingsTabAbout"><%- lang('settings.navAbout') %></button>
                     <button class="settingsNavItem" rSc="settingsTabUpdate" id="settingsNavUpdate"><%- lang('settings.navUpdates') %></button>
-                    <div id="settingsNavContentBottom">
+                    <div class="settingsNavSpacer" style="height: 10px;"></div>
+                    <div class="settingsNavSpacer">
                         <div class="settingsNavDivider"></div>
-                        <button id="settingsNavDone"><%- lang('settings.navDone') %></button>
                     </div>
+                    <div class="settingsNavSpacer" style="height: 10px;"></div>
+                    <button id="settingsNavDone"><%- lang('settings.navDone') %></button>
+                    <!-- <div id="settingsNavContentBottom"></div>
+                        <button id="settingsNavDone"><%- lang('settings.navDone') %></button>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -385,6 +392,65 @@
                     <div class="settingsChangelogText">
                         <%- lang('settings.noReleaseNotes') %>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div id="settingsTabDelete" class="settingsTab" style="display: none;">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText"><%- lang('settings.DataDeleteHeaderText') %></span>
+                <span class="settingsTabHeaderDesc"><%- lang('settings.DataDeleteHeaderDesc') %></span>
+            </div>
+            <div class="settingsFieldContainer">
+                <div class="settingsFieldLeft">
+                    <span class="settingsFieldTitle"><%- lang('settings.deleteModTitle') %></span>
+                </div>
+                <div class="settingsFieldRight">
+                    <button class="settingsDeleteButton" id="delete-button"><%- lang('settings.deleteButtonText') %></button>
+                </div>
+            </div>
+            <div class="settingsFieldContainer">
+                <div class="settingsFieldLeft">
+                    <span class="settingsFieldTitle"><%- lang('settings.deleteModsettingsTitle') %></span>
+                    <span class="settingsFieldDesc"><%- lang('settings.deleteModsettingsDesc') %></span>
+                </div>
+                <div class="settingsFieldRight">
+                    <button class="settingsDeleteButton" id="delete-button"><%- lang('settings.deleteButtonText') %></button>
+                </div>
+            </div>
+            <div class="settingsFieldContainer">
+                <div class="settingsFieldLeft">
+                    <span class="settingsFieldTitle"><%- lang('settings.deleteDefaultsTitle') %></span>
+                    <span class="settingsFieldDesc"><%- lang('settings.deleteDefaultsDesc') %></span>
+                </div>
+                <div class="settingsFieldRight">
+                    <button class="settingsDeleteButton" id="delete-button"><%- lang('settings.deleteButtonText') %></button>
+                </div>
+            </div>
+            <div class="settingsFieldContainer">
+                <div class="settingsFieldLeft">
+                    <span class="settingsFieldTitle"><%- lang('settings.deleteResourcepacksTitle') %></span>
+                    <span class="settingsFieldDesc"><%- lang('settings.deleteResourcepacksDesc') %></span>
+                </div>
+                <div class="settingsFieldRight">
+                    <button class="settingsDeleteButton" id="delete-button"><%- lang('settings.deleteButtonText') %></button>
+                </div>
+            </div>
+            <div class="settingsFieldContainer">
+                <div class="settingsFieldLeft">
+                    <span class="settingsFieldTitle"><%- lang('settings.deleteShaderpacksTitle') %></span>
+                    <span class="settingsFieldDesc"><%- lang('settings.deleteShaderpacksDesc') %></span>
+                </div>
+                <div class="settingsFieldRight">
+                    <button class="settingsDeleteButton" id="delete-button"><%- lang('settings.deleteButtonText') %></button>
+                </div>
+            </div>
+            <div class="settingsFieldContainer">
+                <div class="settingsFieldLeft">
+                    <span class="settingsFieldTitle"><%- lang('settings.deleteLogsTitle') %></span>
+                    <span class="settingsFieldDesc"><%- lang('settings.deleteLogsDesc') %></span>
+                </div>
+                <div class="settingsFieldRight">
+                    <button class="settingsDeleteButton" id="delete-button"><%- lang('settings.deleteButtonText') %></button>
                 </div>
             </div>
         </div>

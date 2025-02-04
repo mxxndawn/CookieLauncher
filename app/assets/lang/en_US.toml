@@ -122,6 +122,10 @@ launcherUpdatesHeaderDesc = "Download, install, and review updates for the launc
 checkForUpdates = "Check for Updates"
 whatsNew = "What's New"
 updateReleaseNotes = "Update Release Notes"
+navResets = "Data Reset"
+DataResetsHeaderText = "Data Reset"
+DataResetsHeaderDesc = "Reset the game data."
+resetButtonText = "Delete selection data"
 
 [ejs.waiting]
 waitingText = "Waiting for Microsoft.."
