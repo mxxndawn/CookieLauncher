@@ -1581,3 +1581,78 @@ async function prepareSettings(first = false) {
 
 // Prepare the settings UI on startup.
 //prepareSettings(true)
+
+/**
+ * settings.ejs에서 settingsDeleteButton클래스의 버튼을 누를때 해당버튼의 data-delete-type을 호출하여
+ * deleteType 변수에 저장.
+ * 
+ * 추가 변수 지정 : serv = (await DistroAPI.getDistribution()).getServerById(ConfigManager.getSelectedServer())
+ * 
+ * deleteType에 따라서 dPath타입을 3가지로 정의하고, dFile타입을 1가지로 정의
+ * 
+ * 
+ * path타입은 아래와 같음.
+ * 단일 패스지정 타입 : servermods, dropinmods, modconfigs, resourcepacks, shaderpacks
+ * dPath = path.join(ConfigManager.getInstanceDirectory(), serv.rawServer.id, 'mods'
+ * 혹은
+ * dPath = path.join(ConfigManager.getCommonDirectory()
+ * 
+ * 복수 패스지정 타입 : logs
+ * dPath = path.join(ConfigManager.getInstanceDirectory(), serv.rawServer.id, [logs, crash_logs])
+ * 
+ * 복수 파일지정 타입 : defaults
+ * dPath = path.join(ConfigManager.getInstanceDirectory(), serv.rawServer.id)
+ * dFile = [server.dat, hotkey.json]
+ * 
+ * 
+ * 삭제버튼 선택 -> 삭제 확인 메세지 띄움 -> 확인시 타입 확인후 타입별 삭제 변수(dPath,dFile)를 datamanager.js에게 전달
+ * -> datamanager.js에서 path의 값만 받을경우엔 해당 폴더를 통째로 삭제, file의 값도 받을경우엔 해당 path안에 있는 file로 지정된 파일만 삭제
+ * -> 삭제 성공시 성공 메세지, 실패시 실패 메세지 띄움
+ * 
+ */
+document.querySelectorAll('.settingsDeleteButton').forEach(button => {
+    button.addEventListener('click', async function () {
+        const deleteType = this.getAttribute('data-delete-type')
+        const serv = (await DistroAPI.getDistribution()).getServerById(ConfigManager.getSelectedServer())
+        let dPath, dFile = []
+
+        switch (deleteType) {
+            case 'servermods':
+                dPath = path.join(ConfigManager.getCommonDirectory())
+                break
+            case 'dropinmods':
+                dPath = path.join(ConfigManager.getInstanceDirectory(), serv.rawServer.id, 'mods')
+                break
+            case 'modconfigs':
+                dPath = path.join(ConfigManager.getInstanceDirectory(), serv.rawServer.id, 'config')
+                break
+            case 'resourcepacks':
+            case 'shaderpacks':
+                dPath = path.join(ConfigManager.getInstanceDirectory(), serv.rawServer.id, deleteType)
+                break
+            case 'logs':
+                dPath = [
+                    path.join(ConfigManager.getInstanceDirectory(), serv.rawServer.id, 'logs'),
+                    path.join(ConfigManager.getInstanceDirectory(), serv.rawServer.id, 'crash-reports')
+                ]
+                break
+            case 'defaults':
+                dPath = path.join(ConfigManager.getInstanceDirectory())
+                dFile = ['servers.dat', 'options.txt']
+                break
+            default:
+                console.error('Unknown delete type:', deleteType)
+                return
+        }
+
+        const confirmMessage = `정말 ${deleteType} 데이터를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.`
+        if (!confirm(confirmMessage)) return
+
+        const res = await datamanager.deleteDatafiles(dPath, dFile)
+        if (res) {
+            alert(`${deleteType} 데이터가 성공적으로 삭제되었습니다.`)
+        } else {
+            alert(`${deleteType} 데이터 삭제 중 오류가 발생했습니다.`)
+        }
+    })
+})

@@ -402,10 +402,20 @@
             </div>
             <div class="settingsFieldContainer">
                 <div class="settingsFieldLeft">
-                    <span class="settingsFieldTitle"><%- lang('settings.deleteModTitle') %></span>
+                    <span class="settingsFieldTitle"><%- lang('settings.deleteServermodTitle') %></span>
+                    <span class="settingsFieldDesc"><%- lang('settings.deleteServermodDesc') %></span>
                 </div>
                 <div class="settingsFieldRight">
-                    <button class="settingsDeleteButton" id="delete-button"><%- lang('settings.deleteButtonText') %></button>
+                    <button class="settingsDeleteButton" data-delete-type="servermods"><%- lang('settings.deleteButtonText') %></button>
+                </div>
+            </div>
+            <div class="settingsFieldContainer">
+                <div class="settingsFieldLeft">
+                    <span class="settingsFieldTitle"><%- lang('settings.deleteDropinmodTitle') %></span>
+                    <span class="settingsFieldDesc"><%- lang('settings.deleteDropinmodDesc') %></span>
+                </div>
+                <div class="settingsFieldRight">
+                    <button class="settingsDeleteButton" data-delete-type="dropinmods"><%- lang('settings.deleteButtonText') %></button>
                 </div>
             </div>
             <div class="settingsFieldContainer">
@@ -414,7 +424,7 @@
                     <span class="settingsFieldDesc"><%- lang('settings.deleteModsettingsDesc') %></span>
                 </div>
                 <div class="settingsFieldRight">
-                    <button class="settingsDeleteButton" id="delete-button"><%- lang('settings.deleteButtonText') %></button>
+                    <button class="settingsDeleteButton" data-delete-type="modsettings"><%- lang('settings.deleteButtonText') %></button>
                 </div>
             </div>
             <div class="settingsFieldContainer">
@@ -423,7 +433,7 @@
                     <span class="settingsFieldDesc"><%- lang('settings.deleteDefaultsDesc') %></span>
                 </div>
                 <div class="settingsFieldRight">
-                    <button class="settingsDeleteButton" id="delete-button"><%- lang('settings.deleteButtonText') %></button>
+                    <button class="settingsDeleteButton" data-delete-type="defaultes"><%- lang('settings.deleteButtonText') %></button>
                 </div>
             </div>
             <div class="settingsFieldContainer">
@@ -432,7 +442,7 @@
                     <span class="settingsFieldDesc"><%- lang('settings.deleteResourcepacksDesc') %></span>
                 </div>
                 <div class="settingsFieldRight">
-                    <button class="settingsDeleteButton" id="delete-button"><%- lang('settings.deleteButtonText') %></button>
+                    <button class="settingsDeleteButton" data-delete-type="resourcepacks"><%- lang('settings.deleteButtonText') %></button>
                 </div>
             </div>
             <div class="settingsFieldContainer">
@@ -441,7 +451,7 @@
                     <span class="settingsFieldDesc"><%- lang('settings.deleteShaderpacksDesc') %></span>
                 </div>
                 <div class="settingsFieldRight">
-                    <button class="settingsDeleteButton" id="delete-button"><%- lang('settings.deleteButtonText') %></button>
+                    <button class="settingsDeleteButton" data-delete-type="shaderpacks"><%- lang('settings.deleteButtonText') %></button>
                 </div>
             </div>
             <div class="settingsFieldContainer">
@@ -450,7 +460,7 @@
                     <span class="settingsFieldDesc"><%- lang('settings.deleteLogsDesc') %></span>
                 </div>
                 <div class="settingsFieldRight">
-                    <button class="settingsDeleteButton" id="delete-button"><%- lang('settings.deleteButtonText') %></button>
+                    <button class="settingsDeleteButton" data-delete-type="logs"><%- lang('settings.deleteButtonText') %></button>
                 </div>
             </div>
         </div>
